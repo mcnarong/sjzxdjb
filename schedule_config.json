@@ -1,0 +1,39 @@
+{
+  "enabled": true,
+  "target": "full_flow",
+  "script_path": "examples/open_settings.json",
+  "mode": "finish_interval",
+  "daily_times": [
+    "00:00",
+    "08:00",
+    "12:00",
+    "20:00"
+  ],
+  "run_on_start": false,
+  "dry_run": false,
+  "serial": "192.168.1.110:38137",
+  "workflow": {
+    "qq_profile_key": "xiaomi_2211133c_qq",
+    "qq_screenshots": false,
+    "qq_account_count": 6,
+    "full_flow_rounds": 6,
+    "delta_force_profile_key": "xiaomi_2211133c_delta",
+    "delta_force_full_flow": true,
+    "delta_force_screenshots": false,
+    "delta_force_exit": true,
+    "delta_force_logout": true,
+    "delta_force_smart_check": true,
+    "delta_force_replenish": true,
+    "delta_force_station_keys": [
+      "tech",
+      "workbench",
+      "med",
+      "armor"
+    ]
+  },
+  "last_finished_at": "2026-10-15 11:47",
+  "interval_minutes": 0,
+  "connection_mode": "wireless",
+  "wireless_serial": "192.168.1.110:38137",
+  "interval_hours": 8.0
+}

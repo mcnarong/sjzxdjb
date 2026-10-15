@@ -1,0 +1,6 @@
+{
+  "power_action": "shutdown",
+  "power_time": "23:30",
+  "force_close": false,
+  "wake_time": "08:00"
+}

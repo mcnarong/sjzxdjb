@@ -1,0 +1,133 @@
+项目上下文记录
+保存时间：2026-05-09
+
+项目路径
+D:\github\ADBAutomation_recovered
+
+发布目录
+D:\github\ADBAutomation_recovered\dist_release
+
+当前主程序
+D:\github\ADBAutomation_recovered\dist_release\三角洲助手.exe
+
+授权管理器
+D:\github\ADBAutomation_recovered\dist_release\三角洲助手授权管理器.exe
+
+重要状态
+1. 项目是从 bytecode 恢复的 Python/Tkinter 项目，很多 adb_automation/*.py 会先加载 recovered_bytecode/*.pyc，再用 monkey patch 覆盖功能。
+2. 程序名称已改为“三角洲助手”。
+3. exe 文件图标保留旧粉色图标，程序内左上角/侧边栏 logo 使用黄色图标。
+4. dist_release 里只保留中文 exe 名，英文中间 exe 已删除。
+5. gitee_token.txt 已保留，不要输出令牌内容。
+6. activation.dat 授权文件已保留，打包后授权检查通过。
+7. 手机当前无线 ADB 在线，设备为 192.168.8.134:5555，型号 2211133C，分辨率 1080x2400。
+
+已实现功能
+1. 无线调试页面
+   - 侧边栏独立页面：无线调试。
+   - 显示当前连接、有线设备、无线设备、异常设备、24小时连接状态、最后检查、最后结果。
+   - 支持开启24小时无线连接、停止24小时连接、测试连接、刷新设备。
+   - 逻辑是电脑端保活和自动重连；未 Root 手机无法真正永久开启系统无线调试，手机重启后需要重新插 USB 开启一次。
+   - 无线调试页面按钮已改成自动换行排列，窗口窄时不会挤到右边。
+
+2. 连接模式
+   - 概览页支持 USB 调试 / 无线调试选择。
+   - 右侧状态栏新增“连接模式”。
+   - 无线模式下会优先使用保存的无线 serial，并在定时任务每轮开始前 adb connect。
+
+3. 等待时间页面
+   - 侧边栏独立页面：等待时间。
+   - 支持每个关键步骤的秒数编辑、保存、恢复默认。
+   - 标签已设置自动换行。
+   - 保存到 wait_settings.json。
+   - 目前代码默认值已固化为用户最后在程序中保存的等待时间。
+
+当前等待时间默认值
+launch_game_load = 17.0
+after_qq_login = 3.0
+after_first_authorization = 2.0
+after_second_authorization = 12.0
+after_start_game = 3.0
+start_popup_check = 3.0
+after_special_office = 2.0
+station_action = 3.0
+qq_reset = 1.0
+qq_home_load = 2.0
+qq_security = 2.0
+qq_settings_open = 2.0
+qq_account_security_open = 2.0
+qq_switch_complete = 3.5
+phone_home_show = 1.5
+back_to_lobby = 2.0
+open_settings = 2.0
+logout_confirm = 2.0
+close_game_process = 1.0
+login_page_after_logout = 12.0
+agreement_effect = 2.0
+
+4. 电脑电源页面
+   - 原“功能预留”页面已改为“电脑电源”。
+   - 支持设置自动关机、重启、睡眠、休眠。
+   - 支持设置定时唤醒。
+   - 支持保存设置、创建计划、取消计划。
+   - 配置保存到 power_control.json。
+   - 注意：完全关机后的自动开机需要 BIOS 定时开机或 Wake-on-LAN；程序内实现的是 Windows 计划任务和睡眠/休眠唤醒。
+   - 我没有实际创建计划任务，也没有执行关机。
+
+新增/修改的重要文件
+adb_automation\adb_keepalive.py
+adb_automation\wait_settings.py
+adb_automation\power_control.py
+adb_automation\desktop_app.py
+adb_automation\workflows.py
+build_single_exe.ps1
+
+配置文件
+gitee_token.txt
+activation.dat
+revocation_cache.dat
+schedule_config.json
+wireless_adb.json
+wait_settings.json
+power_control.json
+
+打包脚本
+使用：
+.\build_single_exe.ps1
+
+打包后脚本默认输出英文中间名：
+dist_release\ADBAutomation.exe
+dist_release\ADBLicenseGenerator.exe
+
+需要后处理：
+1. 复制 ADBAutomation.exe 为 三角洲助手.exe
+2. 复制 ADBLicenseGenerator.exe 为 三角洲助手授权管理器.exe
+3. 删除英文 exe
+
+build_single_exe.ps1 已加入保留逻辑，重打包时会保留：
+gitee_token.txt
+wireless_adb.json
+wait_settings.json
+power_control.json
+schedule_config.json
+activation.dat
+revocation_cache.dat
+archives
+captures
+device_profiles
+log
+
+最近验证
+1. python -m py_compile 检查通过。
+2. Tkinter 隐藏窗口创建 DesktopApp，通过。
+3. 侧边栏包含：概览、QQ 切换、三角洲制作、完整流程、定时任务、等待时间、无线调试、电脑电源、终端。
+4. dist_release 授权检查通过。
+5. dist_release 中 wait_settings.json 与代码默认值一致。
+6. ADB 设备在线：192.168.8.134:5555。
+
+注意事项
+1. 不要打印 gitee_token.txt 的内容。
+2. 不要删除 recovered_bytecode、adb_automation、platform-tools、assets、device_profiles、examples。
+3. 如果重新打包前程序正在运行，需要先结束 三角洲助手.exe 进程，否则 exe 无法覆盖。
+4. 该项目没有 git 命令可用，where git 失败过。
+5. PowerShell 5 对中文 ps1/UTF-8 无 BOM 可能有解析问题，build_single_exe.ps1 里尽量保持 ASCII 关键脚本内容。

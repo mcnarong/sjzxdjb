@@ -1,0 +1,27 @@
+# 敏感隐私与凭证
+gitee_token.txt
+activation.dat
+revocation_cache.dat
+wireless_adb.json
+
+# 编译临时与打包输出
+build/
+build_single/
+build_single_generator/
+dist/
+dist_release/
+.dist_release_preserve/
+*.exe
+*.bak
+
+# 运行截图与日志
+captures/
+log/
+debug_crops/
+archives/
+
+# Python 缓存（保留恢复的核心字节码）
+__pycache__/
+*.py[cod]
+!recovered_bytecode/
+!recovered_bytecode/**

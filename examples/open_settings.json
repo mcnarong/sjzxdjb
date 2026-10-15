@@ -1,0 +1,33 @@
+{
+  "name": "wake and open Android settings",
+  "steps": [
+    {
+      "action": "key",
+      "key": "WAKEUP"
+    },
+    {
+      "action": "sleep",
+      "seconds": 0.5
+    },
+    {
+      "action": "key",
+      "key": "HOME"
+    },
+    {
+      "action": "sleep",
+      "seconds": 0.5
+    },
+    {
+      "action": "launch",
+      "package": "com.android.settings"
+    },
+    {
+      "action": "sleep",
+      "seconds": 1
+    },
+    {
+      "action": "screenshot",
+      "path": "screen-current.png"
+    }
+  ]
+}

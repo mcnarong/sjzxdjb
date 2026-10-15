@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "device_key": "xiaomi_2211133c",
+  "label": "小米13 已验证坐标",
+  "match": {
+    "manufacturer": "Xiaomi",
+    "model": "2211133C",
+    "product": "fuxi",
+    "screen_width": 1080,
+    "screen_height": 2400,
+    "display_width": 1080,
+    "display_height": 2400,
+    "density": 440
+  },
+  "qq_profiles": [
+    {
+      "key": "xiaomi_2211133c_qq",
+      "label": "小米13 已验证 QQ 坐标",
+      "screen": {
+        "orientation": "portrait",
+        "dry_run_width": 1080,
+        "dry_run_height": 2400
+      },
+      "avatar_tap": {
+        "x": 93,
+        "y": 190,
+        "note": "点击 QQ 左上角头像"
+      },
+      "settings_tap": {
+        "x": 103,
+        "y": 2210,
+        "note": "点击个人侧栏底部设置"
+      },
+      "account_security_tap": {
+        "x": 540,
+        "y": 517,
+        "note": "点击设置页账号与安全"
+      }
+    }
+  ],
+  "delta_force_profiles": [
+    {
+      "key": "xiaomi_2211133c_delta",
+      "label": "小米13 已验证三角洲坐标",
+      "screen": {
+        "orientation": "landscape",
+        "dry_run_width": 2400,
+        "dry_run_height": 1080
+      },
+      "stations": [
+        {
+          "key": "tech",
+          "label": "技术中心",
+          "slot_xp": 0.2167,
+          "slot_yp": 0.3981,
+          "open_xp": 0.28,
+          "open_yp": 0.2301,
+          "slot_box": [
+            0.1471,
+            0.3028,
+            0.2913,
+            0.463
+          ]
+        },
+        {
+          "key": "workbench",
+          "label": "工作台",
+          "slot_xp": 0.3804,
+          "slot_yp": 0.3981,
+          "open_xp": 0.4412,
+          "open_yp": 0.2301,
+          "slot_box": [
+            0.3083,
+            0.3028,
+            0.4525,
+            0.463
+          ]
+        },
+        {
+          "key": "med",
+          "label": "制药台",
+          "slot_xp": 0.2167,
+          "slot_yp": 0.7546,
+          "open_xp": 0.28,
+          "open_yp": 0.6051,
+          "slot_box": [
+            0.1471,
+            0.6778,
+            0.2913,
+            0.837
+          ]
+        },
+        {
+          "key": "armor",
+          "label": "防具台",
+          "slot_xp": 0.3804,
+          "slot_yp": 0.7546,
+          "open_xp": 0.4412,
+          "open_yp": 0.6051,
+          "slot_box": [
+            0.3083,
+            0.6778,
+            0.4525,
+            0.837
+          ]
+        }
+      ],
+      "login_qq_tap": {
+        "x": 1390,
+        "y": 850,
+        "note": "如果显示登录页则点击 QQ 登录"
+      },
+      "qq_authorize_first_tap": {
+        "x": 426,
+        "y": 750,
+        "note": "如果显示 QQ 第一层授权则点击同意"
+      },
+      "qq_authorize_second_tap": {
+        "x": 426,
+        "y": 724,
+        "note": "如果显示 QQ 第二层授权则点击同意"
+      },
+      "fenghuo_mode_tap": {
+        "x": 619,
+        "y": 367,
+        "note": "选择烽火地带"
+      },
+      "start_game_tap": {
+        "x": 293,
+        "y": 913,
+        "note": "点击开始游戏"
+      },
+      "special_office_tap": {
+        "x": 1020,
+        "y": 1032,
+        "note": "点击大厅底部特勤处"
+      },
+      "lobby_back_tap": {
+        "x": 180,
+        "y": 49,
+        "note": "从特勤处返回大厅"
+      },
+      "detail_back_tap": {
+        "x": 170,
+        "y": 50,
+        "note": "从制作详情返回特勤处"
+      },
+      "settings_tap": {
+        "x": 2260,
+        "y": 50,
+        "note": "打开大厅右上角设置"
+      },
+      "logout_tap": {
+        "x": 2136,
+        "y": 994,
+        "note": "点击设置里的退出登录"
+      },
+      "logout_confirm_tap": {
+        "x": 1488,
+        "y": 778,
+        "note": "确认退出登录"
+      },
+      "login_agreement_tap": {
+        "x": 734,
+        "y": 924,
+        "note": "勾选登录页协议同意框"
+      },
+      "action_button_tap": {
+        "x": 2030,
+        "y": 989,
+        "note": "点击生产按钮"
+      },
+      "replenish_price_tap": {
+        "x": 1200,
+        "y": 890,
+        "note": "点击一键补齐清单底部价格按钮"
+      }
+    }
+  ]
+}

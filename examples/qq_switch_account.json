@@ -1,0 +1,124 @@
+{
+  "name": "QQ 切换账号",
+  "description": "GUI 生成的 QQ 切换账号脚本，设备坐标: xiaomi_2211133c，QQ 总账号数 5，目标账号: 第 4 个可切换账号（当前登录账号不参与切换）",
+  "screen": {
+    "orientation": "portrait",
+    "dry_run_width": 1080,
+    "dry_run_height": 2400
+  },
+  "steps": [
+    {
+      "action": "key",
+      "key": "WAKEUP",
+      "note": "唤醒手机屏幕"
+    },
+    {
+      "action": "shell",
+      "command": [
+        "am",
+        "force-stop",
+        "com.tencent.mobileqq"
+      ],
+      "note": "重置 QQ 当前页面"
+    },
+    {
+      "action": "sleep",
+      "seconds": 1
+    },
+    {
+      "action": "launch",
+      "package": "com.tencent.mobileqq",
+      "note": "打开 QQ"
+    },
+    {
+      "action": "sleep",
+      "seconds": 5,
+      "note": "等待 QQ 首页加载"
+    },
+    {
+      "action": "dismiss_qq_security_prompt",
+      "note": "检查 QQ 安全提醒，有则点击取消"
+    },
+    {
+      "action": "sleep",
+      "seconds": 1,
+      "note": "等待安全提醒处理完成"
+    },
+    {
+      "action": "screenshot",
+      "path": "captures/qq_switch_01_home.png"
+    },
+    {
+      "action": "tap",
+      "x": 93,
+      "y": 190,
+      "note": "点击 QQ 左上角头像"
+    },
+    {
+      "action": "sleep",
+      "seconds": 2,
+      "note": "等待个人侧栏打开"
+    },
+    {
+      "action": "screenshot",
+      "path": "captures/qq_switch_02_profile_panel.png"
+    },
+    {
+      "action": "tap",
+      "x": 103,
+      "y": 2210,
+      "note": "点击个人侧栏底部设置"
+    },
+    {
+      "action": "sleep",
+      "seconds": 2,
+      "note": "等待 QQ 设置页打开"
+    },
+    {
+      "action": "screenshot",
+      "path": "captures/qq_switch_03_settings.png"
+    },
+    {
+      "action": "tap",
+      "x": 540,
+      "y": 517,
+      "note": "点击设置页账号与安全"
+    },
+    {
+      "action": "sleep",
+      "seconds": 2,
+      "note": "等待账号与安全页打开"
+    },
+    {
+      "action": "screenshot",
+      "path": "captures/qq_switch_04_account_security.png"
+    },
+    {
+      "action": "tap_qq_account_last",
+      "total_accounts": 5,
+      "note": "按 QQ 总账号数 5 动态点击第 4 个可切换账号"
+    },
+    {
+      "action": "sleep",
+      "seconds": 5,
+      "note": "等待 QQ 完成账号切换"
+    },
+    {
+      "action": "screenshot",
+      "path": "captures/qq_switch_05_after_switch.png"
+    },
+    {
+      "action": "finish_qq_switch_to_home",
+      "note": "检查并处理安全提醒，然后返回手机桌面"
+    },
+    {
+      "action": "sleep",
+      "seconds": 1,
+      "note": "等待手机桌面显示"
+    },
+    {
+      "action": "screenshot",
+      "path": "captures/qq_switch_07_home.png"
+    }
+  ]
+}
